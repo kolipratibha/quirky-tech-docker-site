@@ -1,0 +1,17 @@
+name: HTML Docker Build
+
+on:
+  push:
+    branches:
+      - main   # this triggers workflow on push to main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t html-site .
