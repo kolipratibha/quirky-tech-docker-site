@@ -22,4 +22,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: kolipratibha/quirky-html-site:latest
+          tags: kolipratibha/quirky-tech-docker-site:latest
+
