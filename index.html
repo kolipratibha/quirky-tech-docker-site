@@ -1,0 +1,3636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIRKY TECH SOLUTIONS - Innovating Technology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Add this inside <head> -->
+<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #FF6B35; /* Orange from logo */
+            --secondary: #004E89; /* Blue from logo */
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --gray: #6C757D;
+            --light-gray: #E9ECEF;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        /* Updated Navigation Bar - Exactly like your code */
+        nav {
+            position: fixed;
+            top: 24px; /* top-6 equivalent (6 * 4px = 24px) */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 50;
+            width: 90%;
+            transition: all 0.3s;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 9999px;
+            padding: 16px 0; /* py-4 equivalent */
+            background-color: rgba(255, 255, 255, 0.6);
+            transform: scale(1) translateX(-50%);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 32px; /* px-8 equivalent (8 * 4px = 32px) */
+            position: relative;
+            z-index: 20;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px; /* gap-3 equivalent */
+        }
+        
+        .logo-img {
+            height: 40px;
+            object-fit: contain;
+        }
+        
+        @media (min-width: 768px) {
+            .logo-img {
+                height: 48px; /* md:h-12 equivalent */
+            }
+        }
+        
+        .logo-text {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 700;
+            color: #1e3a8a; /* text-blue-900 */
+            letter-spacing: 0.025em; /* tracking-wide */
+        }
+        
+        @media (min-width: 768px) {
+            .logo-text {
+                font-size: 1.5rem; /* md:text-2xl */
+            }
+        }
+        
+        .nav-links {
+            display: none;
+            gap: 40px; /* gap-10 equivalent (10 * 4px = 40px) */
+            color: #4b5563; /* text-gray-700 */
+            font-weight: 500; /* font-medium */
+            list-style: none;
+        }
+        
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+        
+        .nav-links a {
+            cursor: pointer;
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #2563eb; /* hover:text-blue-600 */
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+            font-size: 1.875rem; /* text-3xl */
+            color: #1d4ed8; /* text-blue-700 */
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            z-index: 40;
+            transition: left 0.3s ease;
+            padding-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .mobile-menu.active {
+            left: 0;
+        }
+        
+        .mobile-menu a {
+            font-size: 1.5rem;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 0;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu a:hover {
+            color: var(--primary);
+        }
+        
+        /* UPDATED HOME SECTION - From your code */
+        #home {
+            padding-top: 112px; /* pt-28 */
+            padding-bottom: 64px; /* pb-16 */
+            padding-left: 24px; /* px-6 */
+            padding-right: 24px; /* px-6 */
+            position: relative;
+            overflow: hidden;
+            background-color: white;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        @media (min-width: 768px) {
+            #home {
+                padding-left: 80px; /* md:px-20 */
+                padding-right: 80px; /* md:px-20 */
+            }
+        }
+        
+        #home::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            width: 500px;
+            height: 500px;
+            background-color: rgba(147, 197, 253, 0.2); /* bg-blue-300/20 */
+            filter: blur(150px);
+            border-radius: 9999px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .home-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            gap: 56px; /* md:gap-10 gap-14 */
+        }
+        
+        @media (min-width: 768px) {
+            .home-content {
+                flex-direction: row;
+                gap: 40px; /* md:gap-10 */
+            }
+        }
+        
+        .home-text {
+            width: 100%;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .home-text {
+                width: 50%; /* md:w-1/2 */
+                text-align: left; /* md:text-left */
+            }
+        }
+        
+        #home h1 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: bold;
+            line-height: 1.25;
+            color: #1f2937; /* text-gray-900 */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 24px; /* mt-6 */
+        }
+        
+        @media (min-width: 768px) {
+            #home h1 {
+                font-size: 3rem; /* md:text-5xl */
+                justify-content: flex-start; /* md:justify-start */
+                margin-top: 40px; /* md:mt-10 */
+            }
+        }
+        
+        #home h1 span {
+            display: inline-block;
+            margin-right: 8px; /* mr-2 */
+        }
+        
+        #home .hero-description {
+            margin-top: 20px; /* mt-5 */
+            color: #4b5563; /* text-gray-600 */
+            font-size: 1rem; /* text-base */
+            padding: 0 8px; /* px-2 */
+        }
+        
+        @media (min-width: 768px) {
+            #home .hero-description {
+                font-size: 1.125rem; /* md:text-lg */
+                padding: 0;
+            }
+        }
+        
+        .hero-buttons {
+            margin-top: 32px; /* mt-8 */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* gap-5 */
+        }
+        
+        @media (min-width: 768px) {
+            .hero-buttons {
+                justify-content: flex-start; /* md:justify-start */
+            }
+        }
+        
+        .hero-btn-primary {
+            background-color: #2563eb; /* bg-blue-600 */
+            color: white;
+            padding: 12px 24px; /* px-6 py-3 */
+            border-radius: 12px; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-lg */
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .hero-btn-primary:hover {
+            background-color: #1d4ed8; /* hover:bg-blue-700 */
+        }
+        
+        .hero-btn-secondary {
+            border: 2px solid #2563eb; /* border-2 border-blue-600 */
+            color: #2563eb; /* text-blue-600 */
+            padding: 12px 24px; /* px-6 py-3 */
+            border-radius: 12px; /* rounded-xl */
+            background-color: transparent;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .hero-btn-secondary:hover {
+            background-color: #2563eb; /* hover:bg-blue-600 */
+            color: white; /* hover:text-white */
+        }
+        
+        .home-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        @media (min-width: 768px) {
+            .home-image {
+                width: 50%; /* md:w-1/2 */
+                justify-content: flex-end; /* md:justify-end */
+                margin-top: 40px; /* md:mt-10 */
+            }
+        }
+        
+        .home-image img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 16px; /* rounded-2xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-md */
+            object-fit: cover;
+        }
+        
+        @media (min-width: 768px) {
+            .home-image img {
+                max-width: 250px; /* md:max-w-[250px] */
+            }
+        }
+        
+        /* UPDATED SERVICES SECTION - From your code */
+        #services {
+            position: relative;
+            padding-top: 96px; /* py-24 */
+            padding-bottom: 96px;
+            padding-left: 24px; /* px-6 */
+            padding-right: 24px; /* px-6 */
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            #services {
+                padding-left: 80px; /* md:px-20 */
+                padding-right: 80px; /* md:px-20 */
+            }
+        }
+        
+        #services::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #services::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-color: rgba(147, 197, 253, 0.3); /* bg-blue-300/30 */
+            filter: blur(120px);
+            border-radius: 9999px;
+        }
+        
+        #services h2 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: bold;
+            color: #1f2937; /* text-gray-900 */
+            margin-bottom: 16px; /* mb-4 */
+        }
+        
+        @media (min-width: 768px) {
+            #services h2 {
+                font-size: 3rem; /* md:text-5xl */
+            }
+        }
+        
+        #services .services-subtitle {
+            color: #6b7280; /* text-gray-500 */
+            font-size: 1.125rem; /* text-lg */
+            margin-bottom: 80px; /* mb-20 */
+            max-width: 42rem; /* max-w-2xl */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 64px; /* gap-16 */
+            max-width: 72rem; /* max-w-6xl */
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        @media (min-width: 640px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
+            }
+        }
+        
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.7); /* bg-white/70 */
+            backdrop-filter: blur(12px); /* backdrop-blur-xl */
+            border-radius: 35px; /* rounded-[35px] */
+            padding: 40px; /* p-10 */
+            padding-top: 64px; /* pt-16 */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-lg */
+            transition: all 0.5s;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* hover:shadow-xl */
+            transform: translateY(-8px); /* hover:-translate-y-2 */
+        }
+        
+        .service-icon {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px; /* w-20 */
+            height: 80px; /* h-20 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.875rem; /* text-3xl */
+            border-radius: 9999px;
+            background: linear-gradient(to top right, #3b82f6, #8b5cf6); /* from-blue-500 to-purple-500 */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* shadow-xl */
+        }
+        
+        .service-card h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: bold;
+            margin-top: 32px; /* mt-8 */
+            margin-bottom: 12px; /* mb-3 */
+        }
+        
+        .service-card p {
+            color: #4b5563; /* text-gray-600 */
+        }
+        
+        /* UPDATED PORTFOLIO SECTION - From your code */
+        #portfolio {
+            padding-top: 80px; /* py-20 */
+            padding-bottom: 80px;
+            padding-left: 24px; /* px-6 */
+            padding-right: 24px; /* px-6 */
+            background-color: white;
+            position: relative;
+        }
+        
+        @media (min-width: 768px) {
+            #portfolio {
+                padding-left: 80px; /* md:px-20 */
+                padding-right: 80px; /* md:px-20 */
+            }
+        }
+        
+        #portfolio h2 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: bold;
+            color: #1f2937; /* text-gray-900 */
+            text-align: center;
+            margin-bottom: 32px; /* mb-8 */
+        }
+        
+        @media (min-width: 768px) {
+            #portfolio h2 {
+                font-size: 2.25rem; /* md:text-4xl */
+            }
+        }
+        
+        #portfolio h2 span {
+            color: #7c3aed; /* text-purple-600 */
+        }
+        
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 16px; /* gap-4 */
+            margin-bottom: 64px; /* mb-16 */
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px; /* px-4 py-2 */
+            border-radius: 6px; /* rounded-md */
+            font-weight: 500; /* font-medium */
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .filter-btn.active {
+            background-color: #7c3aed; /* bg-purple-600 */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-md */
+        }
+        
+        .filter-btn:not(.active) {
+            background-color: white;
+            color: #7c3aed; /* text-purple-600 */
+            border: 1px solid #7c3aed; /* border border-purple-600 */
+        }
+        
+        .filter-btn:not(.active):hover {
+            background-color: #f5f3ff; /* hover:bg-purple-50 */
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 112px; /* gap-28 */
+            place-items: start;
+        }
+        
+        @media (min-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
+            }
+        }
+        
+        .portfolio-item {
+            position: relative;
+            width: 360px;
+        }
+        
+        @media (min-width: 768px) {
+            .portfolio-item {
+                width: 400px; /* md:w-[400px] */
+            }
+        }
+        
+        .portfolio-image {
+            border-radius: 24px; /* rounded-3xl */
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-lg */
+            position: relative;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 24px; /* rounded-3xl */
+            transition: transform 0.7s;
+        }
+        
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.05); /* group-hover:scale-105 */
+        }
+        
+        .portfolio-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(216, 180, 254, 0.2), transparent); /* from-purple-100/20 to-transparent */
+            opacity: 0;
+            border-radius: 24px; /* rounded-3xl */
+            transition: opacity 0.5s;
+        }
+        
+        .portfolio-item:hover .portfolio-image::after {
+            opacity: 1; /* group-hover:opacity-100 */
+        }
+        
+        .portfolio-content {
+            width: 85%;
+            background-color: white;
+            border-radius: 24px; /* rounded-3xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-md */
+            padding: 24px; /* p-6 */
+            position: absolute;
+            top: 150px;
+            left: 32px; /* left-8 */
+            transition: all 0.3s;
+        }
+        
+        @media (min-width: 768px) {
+            .portfolio-content {
+                position: relative; /* md:relative */
+                top: 0; /* md:top-0 */
+                left: 0; /* md:left-0 */
+            }
+        }
+        
+        .portfolio-item:hover .portfolio-content {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* group-hover:shadow-xl */
+        }
+        
+        .portfolio-content h3 {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            color: #1f2937; /* text-gray-900 */
+            margin-bottom: 8px; /* mb-2 */
+        }
+        
+        .portfolio-content p {
+            color: #4b5563; /* text-gray-600 */
+            font-size: 0.875rem; /* text-sm */
+            line-height: 1.6; /* leading-relaxed */
+            margin-bottom: 16px; /* mb-4 */
+        }
+        
+        .portfolio-buttons {
+            display: flex;
+            gap: 12px; /* gap-3 */
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        @media (min-width: 768px) {
+            .portfolio-buttons {
+                justify-content: flex-start; /* md:justify-start */
+            }
+        }
+        
+        .portfolio-btn-primary {
+            padding: 8px 16px; /* px-4 py-2 */
+            color: white;
+            background-color: #7c3aed; /* bg-purple-600 */
+            border-radius: 6px; /* rounded-md */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+        }
+        
+        .portfolio-btn-primary:hover {
+            background-color: #6d28d9; /* hover:bg-purple-700 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* hover:shadow-md */
+        }
+        
+        .portfolio-btn-secondary {
+            padding: 8px 16px; /* px-4 py-2 */
+            border: 1px solid #7c3aed; /* border border-purple-600 */
+            color: #7c3aed; /* text-purple-600 */
+            border-radius: 6px; /* rounded-md */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            background-color: transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .portfolio-btn-secondary:hover {
+            background-color: #f5f3ff; /* hover:bg-purple-50 */
+        }
+        
+        #portfolio::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+            background-color: rgba(216, 180, 254, 0.2); /* bg-purple-200/20 */
+            filter: blur(120px);
+            border-radius: 9999px;
+            pointer-events: none;
+        }
+        
+        /* UPDATED PROCESS SECTION - From your code */
+        #process {
+            background-color: white;
+            padding-top: 80px; /* py-20 */
+            padding-bottom: 80px;
+            padding-left: 16px; /* px-4 */
+            padding-right: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @media (min-width: 640px) {
+            #process {
+                padding-left: 24px; /* sm:px-6 */
+                padding-right: 24px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #process {
+                padding-left: 64px; /* md:px-16 */
+                padding-right: 64px;
+            }
+        }
+        
+        #process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 96px; /* h-24 */
+            background: linear-gradient(to bottom, rgba(216, 180, 254, 0.4), transparent); /* from-purple-200/40 to-transparent */
+            pointer-events: none;
+        }
+        
+        @media (min-width: 640px) {
+            #process::before {
+                height: 128px; /* sm:h-32 */
+            }
+        }
+        
+        .process-header {
+            max-width: 72rem; /* max-w-6xl */
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-bottom: 48px; /* mb-12 */
+            padding: 0 8px; /* px-2 */
+        }
+        
+        @media (min-width: 640px) {
+            .process-header {
+                margin-bottom: 64px; /* sm:mb-16 */
+            }
+        }
+        
+        #process h2 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: bold;
+            color: #1f2937; /* text-gray-900 */
+            margin-bottom: 16px; /* mb-4 */
+        }
+        
+        @media (min-width: 640px) {
+            #process h2 {
+                font-size: 2.25rem; /* sm:text-4xl */
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #process h2 {
+                font-size: 3rem; /* md:text-5xl */
+            }
+        }
+        
+        .process-subtitle {
+            color: #4b5563; /* text-gray-600 */
+            font-size: 1rem; /* text-base */
+            padding: 0 16px; /* px-4 */
+        }
+        
+        @media (min-width: 640px) {
+            .process-subtitle {
+                font-size: 1.125rem; /* sm:text-lg */
+                padding: 0 32px; /* sm:px-8 */
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .process-subtitle {
+                padding: 0;
+            }
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px; /* gap-8 */
+            max-width: 72rem; /* max-w-6xl */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 16px; /* px-4 */
+        }
+        
+        @media (min-width: 640px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */
+                gap: 40px; /* sm:gap-10 */
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .process-grid {
+                grid-template-columns: repeat(4, 1fr); /* md:grid-cols-4 */
+            }
+        }
+        
+        .process-card {
+            text-align: center;
+            padding: 24px; /* p-6 */
+            background: linear-gradient(to bottom, white, #f5f3ff); /* from-white to-purple-50 */
+            border-radius: 24px; /* rounded-3xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-md */
+            transition: all 0.3s;
+        }
+        
+        @media (min-width: 640px) {
+            .process-card {
+                padding: 32px; /* sm:p-8 */
+            }
+        }
+        
+        .process-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* hover:shadow-xl */
+        }
+        
+        .process-icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px; /* mb-6 */
+        }
+        
+        .process-icon {
+            width: 64px; /* w-16 */
+            height: 64px; /* h-16 */
+            border-radius: 9999px;
+            background: linear-gradient(to right, #6366f1, #8b5cf6); /* from-indigo-500 to-purple-500 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* shadow-lg */
+            transition: transform 0.3s;
+        }
+        
+        @media (min-width: 640px) {
+            .process-icon {
+                width: 80px; /* sm:w-20 */
+                height: 80px; /* sm:h-20 */
+            }
+        }
+        
+        .process-card:hover .process-icon {
+            transform: scale(1.05); /* group-hover:scale-105 */
+        }
+        
+        .process-icon svg {
+            width: 32px; /* w-8 */
+            height: 32px; /* h-8 */
+            color: #7c3aed; /* text-purple-600 */
+        }
+        
+        .process-card h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            color: #1f2937; /* text-gray-900 */
+            margin-bottom: 12px; /* mb-3 */
+        }
+        
+        @media (min-width: 640px) {
+            .process-card h3 {
+                font-size: 1.5rem; /* sm:text-2xl */
+            }
+        }
+        
+        .process-card p {
+            color: #4b5563; /* text-gray-600 */
+            font-size: 0.875rem; /* text-sm */
+            padding: 0 8px; /* px-2 */
+        }
+        
+        @media (min-width: 640px) {
+            .process-card p {
+                font-size: 1rem; /* sm:text-base */
+                padding: 0;
+            }
+        }
+        
+        /* NEW CLIENTS TESTIMONIALS SECTION */
+        #clients {
+            position: relative;
+            width: 100%;
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #faf7ff, white);
+            overflow: hidden;
+        }
+        
+        @media (min-width: 640px) {
+            #clients {
+                padding: 96px 0;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #clients {
+                padding: 112px 0;
+            }
+        }
+        
+        #clients::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 400px;
+            background-color: rgba(216, 180, 254, 0.3);
+            filter: blur(100px);
+            border-radius: 50%;
+        }
+        
+        @media (min-width: 640px) {
+            #clients::before {
+                width: 500px;
+                height: 500px;
+                filter: blur(120px);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #clients::before {
+                width: 600px;
+                height: 600px;
+            }
+        }
+        
+        .clients-container {
+            max-width: 72rem;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 0 1rem;
+        }
+        
+        #clients h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @media (min-width: 640px) {
+            #clients h2 {
+                font-size: 2.25rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #clients h2 {
+                font-size: 3rem;
+            }
+        }
+        
+        #clients h2 span {
+            color: #7c3aed;
+        }
+        
+        #clients .clients-subtitle {
+            color: #4b5563;
+            font-size: 1rem;
+            max-width: 36rem;
+            margin: 0 auto 2.5rem;
+            padding: 0 0.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+        
+        @media (min-width: 640px) {
+            #clients .clients-subtitle {
+                font-size: 1.125rem;
+                margin-bottom: 3.5rem;
+                padding: 0 2rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #clients .clients-subtitle {
+                margin-bottom: 4rem;
+                padding: 0;
+            }
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 640px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2.5rem;
+            }
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .testimonial-card:nth-child(1) {
+            animation-delay: 0.4s;
+        }
+        
+        .testimonial-card:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+        
+        .testimonial-card:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+        
+        @media (min-width: 640px) {
+            .testimonial-card {
+                padding: 2rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .testimonial-card {
+                padding: 2.5rem;
+            }
+        }
+        
+        .testimonial-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-icon {
+            color: #8b5cf6;
+            font-size: 1.875rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        
+        @media (min-width: 640px) {
+            .testimonial-icon {
+                font-size: 2.25rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        .testimonial-text {
+            color: #374151;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        @media (min-width: 640px) {
+            .testimonial-text {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+        
+        .testimonial-author {
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        @media (min-width: 640px) {
+            .testimonial-author {
+                padding-top: 1.5rem;
+            }
+        }
+        
+        .testimonial-author h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+        
+        @media (min-width: 640px) {
+            .testimonial-author h4 {
+                font-size: 1.125rem;
+            }
+        }
+        
+        .testimonial-author p {
+            color: #6b7280;
+            font-size: 0.75rem;
+            margin-bottom: 0;
+        }
+        
+        @media (min-width: 640px) {
+            .testimonial-author p {
+                font-size: 0.875rem;
+            }
+        }
+        
+        .testimonial-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(216, 180, 254, 0.1), transparent);
+            opacity: 0;
+            border-radius: 1.5rem;
+            transition: opacity 0.5s;
+        }
+        
+        .testimonial-card:hover::after {
+            opacity: 1;
+        }
+        
+        #clients::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 14rem;
+            height: 14rem;
+            background-color: rgba(216, 180, 254, 0.2);
+            border-radius: 50%;
+            filter: blur(2rem);
+            transform: translateX(33%) translateY(33%);
+        }
+        
+        @media (min-width: 640px) {
+            #clients::after {
+                width: 16rem;
+                height: 16rem;
+                filter: blur(3rem);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #clients::after {
+                width: 18rem;
+                height: 18rem;
+            }
+        }
+        
+        /* NEW ABOUT SECTION */
+        #about {
+            position: relative;
+            width: 100%;
+            padding: 64px 0;
+            background-color: white;
+            overflow: hidden;
+        }
+        
+        @media (min-width: 640px) {
+            #about {
+                padding: 80px 0;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #about {
+                padding: 112px 0;
+            }
+        }
+        
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6rem;
+            background: linear-gradient(to bottom, rgba(216, 180, 254, 0.4), transparent);
+            pointer-events: none;
+        }
+        
+        @media (min-width: 640px) {
+            #about::before {
+                height: 8rem;
+            }
+        }
+        
+        .about-container {
+            max-width: 80rem;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            padding: 0 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .about-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4rem;
+            }
+        }
+        
+        .about-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+        
+        @media (min-width: 768px) {
+            .about-image img {
+                max-width: 100%;
+            }
+        }
+        
+        .about-content {
+            text-align: center;
+            padding: 0 0.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .about-content {
+                text-align: left;
+                padding: 0;
+            }
+        }
+        
+        #about h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        @media (min-width: 640px) {
+            #about h2 {
+                font-size: 2.25rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #about h2 {
+                font-size: 3rem;
+                text-align: left;
+            }
+        }
+        
+        #about h2 span {
+            color: #7c3aed;
+        }
+        
+        .about-text {
+            color: #4b5563;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .about-text {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        .about-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        @media (min-width: 640px) {
+            .about-buttons {
+                flex-direction: row;
+                gap: 1rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .about-buttons {
+                justify-content: flex-start;
+            }
+        }
+        
+        .about-btn-primary {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(to right, #6366f1, #8b5cf6);
+            color: white;
+            font-weight: 500;
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-btn-primary:hover {
+            opacity: 0.9;
+        }
+        
+        .about-btn-secondary {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #8b5cf6;
+            color: #8b5cf6;
+            font-weight: 500;
+            border-radius: 9999px;
+            background-color: transparent;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .about-btn-secondary:hover {
+            background-color: rgba(216, 180, 254, 0.1);
+        }
+        
+        #about::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 12rem;
+            height: 12rem;
+            background-color: rgba(216, 180, 254, 0.3);
+            border-radius: 50%;
+            filter: blur(2rem);
+            transform: translateY(50%) translateX(50%);
+        }
+        
+        @media (min-width: 640px) {
+            #about::after {
+                width: 14rem;
+                height: 14rem;
+                filter: blur(3rem);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #about::after {
+                width: 16rem;
+                height: 16rem;
+            }
+        }
+        
+        /* NEW OUR WORK SECTION */
+        #ourwork {
+            padding: 96px 1.5rem;
+            background-color: #f9fafb;
+        }
+        
+        @media (min-width: 768px) {
+            #ourwork {
+                padding: 96px 5rem;
+            }
+        }
+        
+        #ourwork h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+        
+        @media (min-width: 768px) {
+            #ourwork h2 {
+                font-size: 3rem;
+            }
+        }
+        
+        .work-grid {
+            display: flex;
+            flex-direction: column;
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .work-grid {
+                flex-direction: row;
+                gap: 2rem;
+            }
+        }
+        
+        .work-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-bottom: 3rem;
+            transition: box-shadow 0.5s;
+        }
+        
+        @media (min-width: 768px) {
+            .work-card {
+                margin-bottom: 0;
+            }
+        }
+        
+        .work-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .work-image {
+            height: 9rem;
+        }
+        
+        @media (min-width: 768px) {
+            .work-image {
+                height: 11rem;
+            }
+        }
+        
+        .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem 1rem 0 0;
+        }
+        
+        .work-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+        
+        .work-content h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .work-content p {
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+        
+        .work-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        @media (min-width: 768px) {
+            .work-buttons {
+                justify-content: flex-start;
+            }
+        }
+        
+        .work-btn-primary {
+            padding: 0.5rem 1rem;
+            color: white;
+            background-color: #7c3aed;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        .work-btn-primary:hover {
+            background-color: #6d28d9;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .work-btn-secondary {
+            padding: 0.5rem 1rem;
+            border: 1px solid #7c3aed;
+            color: #7c3aed;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background-color: transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .work-btn-secondary:hover {
+            background-color: rgba(216, 180, 254, 0.1);
+        }
+        
+        /* NEW CONTACT SECTION */
+        #contact {
+            background-color: white;
+            padding: 64px 0;
+            position: relative;
+        }
+        
+        @media (min-width: 640px) {
+            #contact {
+                padding: 80px 0;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #contact {
+                padding: 96px 0;
+            }
+        }
+        
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5rem;
+            background: linear-gradient(to bottom, rgba(216, 180, 254, 0.4), transparent);
+            pointer-events: none;
+        }
+        
+        @media (min-width: 640px) {
+            #contact::before {
+                height: 6rem;
+            }
+        }
+        
+        .contact-container {
+            max-width: 80rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: flex-start;
+            padding: 0 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-container {
+                flex-direction: row;
+                gap: 2.5rem;
+            }
+        }
+        
+        .contact-info {
+            width: 100%;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-info {
+                width: 50%;
+                text-align: left;
+            }
+        }
+        
+        #contact h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+        
+        @media (min-width: 640px) {
+            #contact h2 {
+                font-size: 2.25rem;
+                margin-bottom: 1rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #contact h2 {
+                text-align: left;
+            }
+        }
+        
+        #contact h2 span {
+            color: #7c3aed;
+        }
+        
+        .contact-description {
+            color: #4b5563;
+            font-size: 1rem;
+            text-align: center;
+        }
+        
+        @media (min-width: 640px) {
+            .contact-description {
+                font-size: 1.125rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .contact-description {
+                text-align: left;
+            }
+        }
+        
+        .contact-form {
+            width: 100%;
+            background-color: rgba(216, 180, 254, 0.1);
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-form {
+                width: 50%;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #d8b4fe;
+            font-size: 0.875rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        @media (min-width: 640px) {
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 1rem;
+            }
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+        }
+        
+        .contact-form textarea {
+            resize: none;
+            height: 8rem;
+        }
+        
+        .contact-form button {
+            padding: 0.75rem 1.5rem;
+            background-color: #7c3aed;
+            color: white;
+            font-weight: 500;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (min-width: 640px) {
+            .contact-form button {
+                font-size: 1rem;
+            }
+        }
+        
+        .contact-form button:hover {
+            background-color: #6d28d9;
+        }
+        
+        #contact::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 12rem;
+            height: 12rem;
+            background-color: rgba(216, 180, 254, 0.2);
+            filter: blur(5rem);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        @media (min-width: 640px) {
+            #contact::after {
+                width: 15rem;
+                height: 15rem;
+                filter: blur(6rem);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            #contact::after {
+                width: 18rem;
+                height: 18rem;
+            }
+        }
+        
+        /* NEW FOOTER */
+        footer {
+            position: relative;
+            width: 100%;
+            background-color: #0b0b0f;
+            color: white;
+            padding: 48px 0;
+            overflow: hidden;
+        }
+        
+        @media (min-width: 640px) {
+            footer {
+                padding: 64px 0;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            footer {
+                padding: 80px 0;
+            }
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10rem;
+            background: linear-gradient(to bottom, rgba(139, 92, 246, 0.2), transparent);
+            pointer-events: none;
+        }
+        
+        @media (min-width: 640px) {
+            footer::before {
+                height: 12rem;
+            }
+        }
+        
+        .footer-container {
+            max-width: 80rem;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            position: relative;
+            z-index: 10;
+            padding: 0 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .footer-container {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 4rem;
+            }
+        }
+        
+        .footer-column {
+            text-align: center;
+        }
+        
+        @media (min-width: 640px) {
+            .footer-column {
+                text-align: left;
+            }
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #a78bfa;
+        }
+        
+        @media (min-width: 640px) {
+            .footer-column h3 {
+                font-size: 1.875rem;
+            }
+        }
+        
+        .footer-column h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #a78bfa;
+        }
+        
+        @media (min-width: 640px) {
+            .footer-column h4 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        .footer-description {
+            color: #d1d5db;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        @media (min-width: 640px) {
+            .footer-description {
+                font-size: 1rem;
+            }
+        }
+        
+        .footer-stats {
+            color: #9ca3af;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        @media (min-width: 640px) {
+            .footer-stats {
+                font-size: 0.875rem;
+            }
+        }
+        
+        .footer-stats span {
+            color: #a78bfa;
+            font-weight: 600;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @media (min-width: 640px) {
+            .newsletter-form {
+                flex-direction: row;
+            }
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            background: transparent;
+            padding: 0.75rem 1rem;
+            color: #e5e7eb;
+            outline: none;
+            border: none;
+            font-size: 0.875rem;
+        }
+        
+        @media (min-width: 640px) {
+            .newsletter-input {
+                font-size: 1rem;
+            }
+        }
+        
+        .newsletter-input::placeholder {
+            color: #9ca3af;
+        }
+        
+        .newsletter-button {
+            padding: 0.75rem 1.5rem;
+            background-color: #7c3aed;
+            color: white;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 0.875rem;
+        }
+        
+        @media (min-width: 640px) {
+            .newsletter-button {
+                font-size: 1rem;
+            }
+        }
+        
+        .newsletter-button:hover {
+            background-color: #6d28d9;
+        }
+        
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            color: #d1d5db;
+            font-size: 0.875rem;
+        }
+        
+        @media (min-width: 640px) {
+            .footer-links {
+                font-size: 1rem;
+            }
+        }
+        
+        .footer-links a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #a78bfa;
+            transform: translateX(4px);
+        }
+        
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            color: #d1d5db;
+            font-size: 0.875rem;
+        }
+        
+        @media (min-width: 640px) {
+            .footer-contact {
+                font-size: 1rem;
+            }
+        }
+        
+        .footer-contact a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-contact a:hover {
+            color: #a78bfa;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        
+        @media (min-width: 640px) {
+            .social-icons {
+                justify-content: flex-start;
+            }
+        }
+        
+        .social-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 1.125rem;
+        }
+        
+        .social-icon:hover {
+            background-color: #7c3aed;
+        }
+        
+        .footer-bottom {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.75rem;
+        }
+        
+        @media (min-width: 640px) {
+            .footer-bottom {
+                font-size: 0.875rem;
+            }
+        }
+        
+        .footer-bottom span {
+            color: #a78bfa;
+            font-weight: 500;
+        }
+        
+        footer::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 14rem;
+            height: 14rem;
+            background-color: rgba(168, 85, 247, 0.3);
+            border-radius: 50%;
+            filter: blur(3rem);
+            transform: translateX(33%) translateY(33%);
+        }
+        
+        @media (min-width: 640px) {
+            footer::after {
+                width: 16rem;
+                height: 16rem;
+            }
+        }
+        
+        /* Call & WhatsApp Buttons */
+        .contact-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+        
+        .call-btn, .whatsapp-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .call-btn {
+            background-color: #25D366;
+        }
+        
+        .whatsapp-btn {
+            background-color: #128C7E;
+        }
+        
+        .call-btn:hover, .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .call-btn, .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            nav ul {
+                gap: 30px;
+            }
+            
+            nav a {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            h2 { font-size: 2rem; }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 850px) {
+            nav ul {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            
+            .nav-container { padding: 0 20px; }
+            
+            /* Mobile navigation */
+            nav {
+                width: 95%;
+                top: 16px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .portfolio-filters {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            /* Mobile specific styles from your code */
+            @media (max-width: 760px) {
+                html, body {
+                    overflow-x: hidden;
+                }
+                #home {
+                    padding-top: 80px;
+                    padding-bottom: 60px;
+                    overflow-x: hidden;
+                }
+                #home h1 {
+                    font-size: 1.8rem;
+                    line-height: 2.4rem;
+                    text-align: center;
+                    margin-top: 40px;
+                }
+                #home p {
+                    font-size: 0.95rem;
+                    text-align: center;
+                    padding: 0 10px;
+                }
+                #home button {
+                    font-size: 0.9rem;
+                    padding: 10px 20px;
+                }
+                #home img {
+                    width: 200px;
+                    margin-top: 0;
+                }
+                
+                #services {
+                    padding-top: 80px;
+                    padding-bottom: 60px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+                #services h2 {
+                    font-size: 1.8rem;
+                    line-height: 2.4rem;
+                }
+                #services p {
+                    font-size: 0.95rem;
+                    padding: 0 10px;
+                    margin-bottom: 50px;
+                }
+                .services-grid {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                }
+                .service-card {
+                    padding: 30px 20px 40px;
+                    border-radius: 25px;
+                }
+                .service-card h3 {
+                    font-size: 1.2rem;
+                }
+                .service-card p {
+                    font-size: 0.9rem;
+                }
+                
+                #portfolio .portfolio-item {
+                    width: 100%;
+                    max-width: 360px;
+                    margin: 0 auto 140px auto;
+                }
+                #portfolio .portfolio-item img {
+                    height: 240px;
+                }
+                #portfolio .portfolio-content {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    width: 90%;
+                    margin: 60px auto 0 auto;
+                }
+                
+                /* Mobile specific for new sections */
+                #clients {
+                    padding: 60px 1rem;
+                }
+                
+                #about {
+                    padding: 60px 1rem;
+                }
+                
+                #ourwork {
+                    padding: 60px 1rem;
+                }
+                
+                #contact {
+                    padding: 60px 1rem;
+                }
+            }
+            
+            @media (min-width: 761px) {
+                #portfolio .portfolio-item {
+                    margin-bottom: 0;
+                }
+                #portfolio .portfolio-content {
+                    margin-top: -60px;
+                }
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .service-card, .portfolio-content, .contact-form {
+                padding: 25px;
+            }
+            
+            .logo-text {
+                display: none;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Updated Navigation Bar -->
+    <nav class="fixed-nav">
+        <div class="nav-container">
+            <div class="logo-container">
+                <!-- Logo image - using placeholder with QT initials -->
+                <div class="logo-img" style="background-color: var(--primary); color: white; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.3rem;">
+                    <img src="static/media/logo-quirky-tech-solutions.jpg">
+                </div>
+                <span class="logo-text">QUIRKY TECH SOLUTIONS</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="cursor-pointer hover:text-blue-600 transition">Home</a></li>
+                <li><a href="#services" class="cursor-pointer hover:text-blue-600 transition">Services</a></li>
+                <!-- <li><a href="#portfolio" class="cursor-pointer hover:text-blue-600 transition">Portfolio</a></li> -->
+                <li><a href="#clients" class="cursor-pointer hover:text-blue-600 transition">Clients</a></li>
+                <li><a href="#about" class="cursor-pointer hover:text-blue-600 transition">About</a></li>
+                <li><a href="#ourclients" class="cursor-pointer hover:text-blue-600 transition">Our Work</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="mobile-menu-link">Home</a>
+        <a href="#services" class="mobile-menu-link">Services</a>
+        <!-- <a href="#portfolio" class="mobile-menu-link">Portfolio</a> -->
+        <a href="#clients" class="mobile-menu-link">Clients</a>
+        <a href="#about" class="mobile-menu-link">About</a>
+        <a href="#ourwork" class="mobile-menu-link">Our Work</a>
+        <a href="#contact" class="mobile-menu-link">Contact</a>
+    </div>
+
+    <!-- UPDATED HOME SECTION -->
+    <section id="home">
+        <div class="home-content">
+            <div class="home-text">
+                <h1>
+                    <span>Services</span>
+                    <span>Offered By</span>
+                    <span class="block text-purple-600">QUIRKY</span>
+                    <span class="block text-purple-600">TECH</span>
+                    <span class="block text-purple-600">SOLUTIONS</span>
+                </h1>
+                <p class="hero-description">
+                    Innovating Technology for Startups, Enterprises and Growing Industries. Empowering businesses to go from offline to online with smart, modern solutions.
+                </p>
+            </div>
+            <div class="home-image">
+                <img alt="hero" src="static/media/upper.jpg">
+            </div>
+        </div>
+        <!-- 
+         -->
+         <!-- Trust Indicators -->
+                    <div class="mt-2 sm:mt-2 md:mt-4 pt-2 sm:pt-2 border-t border-gray-200">
+                        <p class="text-gray-500 text-xs sm:text-sm mb-3 sm:mb-4">Trusted by industry leaders</p>
+                        <div class="flex flex-wrap justify-center lg:justify-start items-center gap-4 sm:gap-6">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <span class="text-xs sm:text-sm font-medium text-gray-700">50+ Happy Clients</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <span class="text-xs sm:text-sm font-medium text-gray-700">100+ Projects</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <span class="text-xs sm:text-sm font-medium text-gray-700">5+ Years Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+    </section>
+
+    <!-- UPDATED SERVICES SECTION -->
+    <section id="services">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
+                Our <span class="text-purple-600">Services</span>
+        </h2>
+        <p class="services-subtitle">We provide a wide range of creative and digital solutions.</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg>
+                </div>
+                <h3>Website Design & Development</h3>
+                <p>E-commerce & Delivery Apps | Game Apps | Corporate / Enterprise Apps | B2B & Client Management Apps | Educational & Learning Apps | Many More</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg>
+                </div>
+                <h3>Mobile App Development</h3>
+                <p>E-commerce & Delivery Apps | Game Apps | Corporate / Enterprise Apps | B2B & Client Management Apps | Educational & Learning Apps | Many More</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M480 160H32c-17.673 0-32-14.327-32-32V64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24z"></path></svg>
+                </div>
+                <h3>Software Development</h3>
+                <p>Business Management Software | Inventory & Billing Systems | Accounting Software | HR & Payroll Systems | Project Tracking & Reporting Tools | Many More</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M96 224c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm448 0c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm32 32h-64c-17.6 0-33.5 7.1-45.1 18.6 40.3 22.1 68.9 62 75.1 109.4h66c17.7 0 32-14.3 32-32v-32c0-35.3-28.7-64-64-64zm-256 0c61.9 0 112-50.1 112-112S381.9 32 320 32 208 82.1 208 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C179.6 288 128 339.6 128 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zm-223.7-13.4C161.5 263.1 145.6 256 128 256H64c-35.3 0-64 28.7-64 64v32c0 17.7 14.3 32 32 32h65.9c6.3-47.4 34.9-87.3 75.2-109.4z"></path></svg>
+                </div>
+                <h3>CRM & ERP Solutions</h3>
+                <p>Customer Management Systems | Sales & Lead Tracking | Inventory & Warehouse Management | Finance & Accounting Modules | HR & Operations Systems</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"></path></svg>
+                </div>
+                <h3>Custom Web Applications</h3>
+                <p>Admin Dashboards | Booking & Reservation Systems | Online Portals | Cloud-Based Solutions | Automation Tools</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M576 240c0-23.63-12.95-44.04-32-55.12V32.01C544 23.26 537.02 0 512 0c-7.12 0-14.19 2.38-19.98 7.02l-85.03 68.03C364.28 109.19 310.66 128 256 128H64c-35.35 0-64 28.65-64 64v96c0 35.35 28.65 64 64 64h33.7c-1.39 10.48-2.18 21.14-2.18 32 0 39.77 9.26 77.35 25.56 110.94 5.19 10.69 16.52 17.06 28.4 17.06h74.28c26.05 0 41.69-29.84 25.9-50.56-16.4-21.52-26.15-48.36-26.15-77.44 0-11.11 1.62-21.79 4.41-32H256c54.66 0 108.28 18.81 150.98 52.95l85.03 68.03a32.023 32.023 0 0 0 19.98 7.02c24.92 0 32-22.78 32-32V295.13C563.05 284.04 576 263.63 576 240zm-96 141.42l-33.05-26.44C392.95 311.78 325.12 288 256 288v-96c69.12 0 136.95-23.78 190.95-66.98L480 98.58v282.84z"></path></svg>
+                </div>
+                <h3>Our High Value Services</h3>
+                <p>Digital Marketing & Social Media Management | Search Engine Optimization (SEO) | Branding & Graphic Design | Maintenance & Technical Support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPDATED PORTFOLIO SECTION IN THE UPDATED SECTION-->
+    
+
+    <!-- UPDATED PROCESS SECTION -->
+    <section id="process" class="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
+                Our <span class="text-purple-600">Process</span>
+            </h2>
+            <p class="text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 text-sm sm:text-base md:text-lg">
+                Our streamlined process ensures we deliver exceptional results every time.
+            </p>
+        </div>
+        
+        <!-- Process Grid with Connecting Lines -->
+        <div class="relative">
+            <!-- Connecting Lines (Desktop only) -->
+            <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 -translate-y-1/2 -z-10"></div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-6 px-2 sm:px-4">
+                
+                <!-- Discovery -->
+                <div class="relative">
+                    <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 p-6 sm:p-8 text-center h-full">
+                        <div class="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-purple-100 text-purple-600 rounded-full mb-4 sm:mb-6 mx-auto">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m21 21-4.34-4.34"></path>
+                                <circle cx="11" cy="11" r="8"></circle>
+                            </svg>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -top-2 sm:-top-3 -left-2 sm:-left-3 w-6 h-6 sm:w-8 sm:h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">1</span>
+                            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-2 sm:mb-3">Discovery</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Understanding your goals and requirements</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Design -->
+                <div class="relative">
+                    <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 p-6 sm:p-8 text-center h-full">
+                        <div class="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-purple-100 text-purple-600 rounded-full mb-4 sm:mb-6 mx-auto">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"></path>
+                                <path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"></path>
+                                <path d="m2.3 2.3 7.286 7.286"></path>
+                                <circle cx="11" cy="11" r="2"></circle>
+                            </svg>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -top-2 sm:-top-3 -left-2 sm:-left-3 w-6 h-6 sm:w-8 sm:h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">2</span>
+                            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-2 sm:mb-3">Design</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Creating wireframes and mockups</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Development -->
+                <div class="relative">
+                    <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 p-6 sm:p-8 text-center h-full">
+                        <div class="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-purple-100 text-purple-600 rounded-full mb-4 sm:mb-6 mx-auto">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m18 16 4-4-4-4"></path>
+                                <path d="m6 8-4 4 4 4"></path>
+                                <path d="m14.5 4-5 16"></path>
+                            </svg>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -top-2 sm:-top-3 -left-2 sm:-left-3 w-6 h-6 sm:w-8 sm:h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">3</span>
+                            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-2 sm:mb-3">Development</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Bringing designs to life</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Launch -->
+                <div class="relative">
+                    <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 p-6 sm:p-8 text-center h-full">
+                        <div class="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-purple-100 text-purple-600 rounded-full mb-4 sm:mb-6 mx-auto">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                            </svg>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -top-2 sm:-top-3 -left-2 sm:-left-3 w-6 h-6 sm:w-8 sm:h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">4</span>
+                            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-2 sm:mb-3">Launch</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Deploying and optimizing your product</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Support (New) -->
+                <div class="relative">
+                    <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 p-6 sm:p-8 text-center h-full">
+                        <div class="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-purple-100 text-purple-600 rounded-full mb-4 sm:mb-6 mx-auto">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
+                                <path d="M12 5.36 8.87 8.5a2.13 2.13 0 0 0 0 3h0a2.13 2.13 0 0 0 3 0l2.26-2.21a3 3 0 0 1 4.22 0l2.4 2.4"></path>
+                                <path d="m18 15-2-2"></path>
+                                <path d="m15 18-2-2"></path>
+                            </svg>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -top-2 sm:-top-3 -left-2 sm:-left-3 w-6 h-6 sm:w-8 sm:h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">5</span>
+                            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-2 sm:mb-3">Support</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">Ongoing maintenance and optimization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+</section>
+
+<style>
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .process-grid {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .process-card {
+        padding: 1.25rem;
+    }
+    
+    .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    
+    .number-badge {
+        font-size: 0.75rem;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .grid-cols-2 {
+        gap: 1.5rem;
+    }
+    
+    .process-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Very small mobile screens */
+@media (max-width: 360px) {
+    .px-4 {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .p-6 {
+        padding: 1rem;
+    }
+    
+    .text-sm {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+    }
+    
+    .icon-container {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .icon-container svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+/* Mobile connection lines (vertical) */
+@media (max-width: 1024px) {
+    .relative {
+        position: relative;
+    }
+    
+    .relative:not(:last-child):after {
+        content: '';
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 1rem;
+        background: linear-gradient(to bottom, #e5e7eb, transparent);
+    }
+}
+
+/* Smooth hover effects for touch devices */
+@media (hover: none) {
+    .process-card {
+        transition: transform 0.2s ease;
+    }
+    
+    .process-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Animation for process cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bg-white.rounded-xl {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.bg-white.rounded-xl:nth-child(1) { animation-delay: 0.1s; }
+.bg-white.rounded-xl:nth-child(2) { animation-delay: 0.2s; }
+.bg-white.rounded-xl:nth-child(3) { animation-delay: 0.3s; }
+.bg-white.rounded-xl:nth-child(4) { animation-delay: 0.4s; }
+.bg-white.rounded-xl:nth-child(5) { animation-delay: 0.5s; }
+
+/* Number badge styling */
+.relative .absolute {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 2px solid white;
+}
+
+/* Icon hover effect */
+.icon-container {
+    transition: all 0.3s ease;
+}
+
+.bg-white.rounded-xl:hover .icon-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: scale(1.05);
+}
+</style>
+
+<script>
+// Add animation on scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const processCards = document.querySelectorAll('.bg-white.rounded-xl');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    processCards.forEach(card => {
+        card.style.animationPlayState = 'paused';
+        observer.observe(card);
+    });
+});
+</script>
+
+    <!-- NEW CLIENTS TESTIMONIALS SECTION -->
+  <section id="clients" class="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-10 sm:mb-12 md:mb-16 lg:mb-20">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
+                Client <span class="text-purple-600">Testimonials</span>
+            </h2>
+            <p class="text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 text-sm sm:text-base md:text-lg">
+                Don't just take our word for it. Hear what our clients have to say about working with us.
+            </p>
+        </div>
+        
+        <!-- Testimonials Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 px-2 sm:px-4">
+            
+            <!-- Testimonial 1 - Reena Damania -->
+            <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 p-6 sm:p-8 flex flex-col h-full">
+                <div class="mb-4 sm:mb-6 text-purple-500">
+                    <svg class="w-8 h-8 sm:w-10 sm:h-10" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"></path>
+                    </svg>
+                </div>
+                
+                <p class="text-gray-700 mb-6 sm:mb-8 text-sm sm:text-base md:text-lg leading-relaxed flex-grow italic">
+                    "Quirky Tech Solutions delivers excellent service with clear communication. They're always ready to solve challenges and ensure the project is completed on time. Great coordination and continuous client support throughout."
+                </p>
+                
+                <div class="border-t border-gray-100 pt-4 sm:pt-6 mt-4 sm:mt-6">
+                    <h4 class="font-bold text-gray-800 text-base sm:text-lg mb-1">Reena Damania</h4>
+                    <p class="text-gray-600 text-xs sm:text-sm">Satisfied Client</p>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 - Pooja Gadiya -->
+            <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 p-6 sm:p-8 flex flex-col h-full">
+                <div class="mb-4 sm:mb-6 text-purple-500">
+                    <svg class="w-8 h-8 sm:w-10 sm:h-10" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"></path>
+                    </svg>
+                </div>
+                
+                <p class="text-gray-700 mb-6 sm:mb-8 text-sm sm:text-base md:text-lg leading-relaxed flex-grow italic">
+                    "Impressed by the dedication and clarity Quirky Tech Solutions brings to every project. Their problem-solving approach, timely delivery, and ongoing support make them a reliable tech partner."
+                </p>
+                
+                <div class="border-t border-gray-100 pt-4 sm:pt-6 mt-4 sm:mt-6">
+                    <h4 class="font-bold text-gray-800 text-base sm:text-lg mb-1">Pooja Gadiya</h4>
+                    <p class="text-gray-600 text-xs sm:text-sm">Director, Gadiya Group</p>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 - Sachin Gaykwad -->
+            <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 p-6 sm:p-8 flex flex-col h-full md:col-span-2 lg:col-span-1">
+                <div class="mb-4 sm:mb-6 text-purple-500">
+                    <svg class="w-8 h-8 sm:w-10 sm:h-10" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"></path>
+                    </svg>
+                </div>
+                
+                <p class="text-gray-700 mb-6 sm:mb-8 text-sm sm:text-base md:text-lg leading-relaxed flex-grow italic">
+                    "Great service and strong coordination from start to finish. Quirky Tech Solutions handles challenges efficiently, delivers on time, and provides consistent client support with complete clarity."
+                </p>
+                
+                <div class="border-t border-gray-100 pt-4 sm:pt-6 mt-4 sm:mt-6">
+                    <h4 class="font-bold text-gray-800 text-base sm:text-lg mb-1">Sachin Gaykwad</h4>
+                    <p class="text-gray-600 text-xs sm:text-sm">Business Owner</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.25rem;
+    }
+    
+    .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .testimonials-grid {
+        gap: 1.5rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Very small mobile screens */
+@media (max-width: 360px) {
+    .px-4 {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .p-6 {
+        padding: 1rem;
+    }
+    
+    .text-sm {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+    }
+    
+    h4 {
+        font-size: 0.875rem;
+    }
+}
+
+/* Smooth hover effects for touch devices */
+@media (hover: none) {
+    .testimonial-card {
+        transition: transform 0.2s ease;
+    }
+    
+    .testimonial-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Ensure equal height cards */
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-text {
+    flex-grow: 1;
+}
+
+/* Loading animation for testimonial cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.testimonial-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.testimonial-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.testimonial-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.testimonial-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Improve quote icon */
+.testimonial-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+    .testimonial-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+</style>
+
+<script>
+// Add animation on scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    testimonials.forEach(testimonial => {
+        testimonial.style.animationPlayState = 'paused';
+        observer.observe(testimonial);
+    });
+});
+</script>
+
+    <!-- NEW ABOUT SECTION -->
+    <section id="about" class="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
+            
+            <!-- About Image -->
+            <div class="w-full lg:w-1/2">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl">
+                    <img src="static/media/about-us.jpg" 
+                         alt="About Quirky Tech Solutions" 
+                         class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+                         onerror="this.onerror=null; this.src='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA1gMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAGAAMEBQcCAQj/xABGEAACAQMCAwUFBAcGBQUAAAABAgMABBEFIQYSMRMiQVFhFDJxgZEHQlKhFSNDcrHB0TNigpLh8BYkY6LwJTVTc4P/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQIDBAX/xAAkEQACAgICAgICAwAAAAAAAAAAAQIRAxIhMUFREyIyQgRhcf/aAAwDAQACEQMRAD8AHmhttehn1PQA0kUZxdxY70TfeA/dP8Ki6GEk7W+uJQkMAwCTgE1Rd22uFvNMd7eZcPExwG8x5GoV5eG7fbuxDkijp761U9P9GTVy5JuuaqNVvlkSERxQqVU9C/n8qgW6CSTvHCDdm8qYJyfOpD5ghEfJgtuxPWtLb5J/wNhczS3UjvFiM8w7p6AdMU8R2A7M8jb5B8RT+l2YuTJJcN2cCrzM4PLkDyo11T0aa1e6Yk9vLaRySJzRW7llYrjbJxjerW0laRnKcIS1k+TNtJvWt7lV5gFc4II2rZY7S90vh+O60yS3sJ2RZJH7IZlTpgEjqB4eJ86w27trizvZbW5jaG5gcpIh6qwOCK3fS9c1XWdLt7C4iN0sdsnL2mMRkDGRn8a6MWSKW0uGcvUYa64Wku2W8U+ne2KXsri1kn5SY4F5FZzk8xHQHfp0zVl2dvzYvLZ1t2XAbnMkqnOQOvSnbfS57O0s57qcSTTOQqZzyHyz4bVOiW0upe0MaOyNyFyMEEeFdUYuXJxTyRj+34C8+qBv2ZP5tSqt1TiOx0K8W0vdSuYZGQSKFhaTunp08K9ojGclcYtnZJwTqUkWltpC2YJtYyGPJgAZJwPH/AJ8ah61eX2i6FdajDaSXNzAvNHbqeXnPqR0HnTJ46sRzY1FWCg7C3bJ/Kut8C8IP6VH1HU7rS7I9hdzRm5lmyqmFGBB7nmcda58U8k3ajwvJ15Z48K25b4SNkuPWJ6Vj3Vjp2l61M8loZpYZDzQyLuS4wPdHwx8aip6w9U1TS2gvtHsLfTGmhNxeJdMq4DA+yR5V2vq+s+jKHVF0u9Ggi9mPIYZYEy2fPIGPnXHeq6jZ6Nr+t2Vp6LtO1uzV2HPJZs5iAbGSwGMHw8q31ku0c2sl3Zdeu7S2heCJfV7os0U7/ZyzNLCzLyjAYj3iMjGcYxVp6qPWrcevfVm/wCBOq6VN9I/22OPmYwNvzbEd3YEjpt51HstV4L4g4ntNLi9Euhs1yC4VpXhY4Gc8g6j1rJZJ1+k0ePH/Jmmv8S6JbTtDd6pbwyp1VnAP8ad4U4w4Yg4miuDrVmOaN41JkABJxt8aJ/VjwToGk6vc6hZ8JQaTdJ9gkkF07qVPVgCceW9UHpT4Z0W3V9SgtGW6aQZcSMSd/XFVDJLJLWyFPHHDDdSL7T+POB9Q0+6vbbia0h01CFMrIQ7tnoq9WwPKhniL0s8GcPXqWzTajeJLGJo7iC3wjKfLmxWKeim9tbKxuIp9S0y0M6lWe7wzRjx5QfHHpUp+I9JgZtPj1vT7q0hPozy8k2+fDqK1yZNW4w6Rlhw6pSm7ZpkXrT0GSNXbWdUiJ8DZqf/5VVH1j+h0Ak8X6kcDOLayWRj8ADvWbalqT3Ni2n2HENi2mM6sLdiiuN/M4Jq3t9b0rTxmJtNtFU5+z5c7Dpv51j6yNf6Ojhn1r+jOyP9dN/wCkVE/7zNJP+/uB8NPX/wC1ZlxDxdbXtwstvq0R7vKCXQ4HkM9BVFHr8WdxqlnOo6AnY/GtI7PlIyev6yo9R+pHR/Rd61PSxqgkh03jS7kRDv7b0pX/AMu1X8vrQ9Jtq8Eb8XXgkmOEGRk+vhWf+ouGK24e1C6iRD29wAHTfIA8/nRhxzNFqenLarGU7NRIjFR7Q6gHzFcs8i2dI64QqKTbLqf1r+kqxuTBdcX38cigErzjby8Kj/7YPStjP9rdR/6x/pWQcT8SLxK1hqDqFvFs0trr1G2YYP8AzqKO2v47mwSQsMlBkE9Nqjb9Fa/qL1/XJ6UQR2XGepDP/wBQ0v8Att9Kn+vNS/6o/wBKFo3sDfRNfQyy2ykkpFIU3A2yRv1qd9J8L/RFxx9BJpr3umP2Mb5hue0GSuScN61Syv4JpckFrX/SD6RZgTNxhqT4/wDqGmz6SuN2B/8ArdT3/wDcN/VDFeUfPk+5HpaLwEUA42vHUEf2r1Pb/wCTJ/8AaubDXL25vH7S6lfJP2jV12l7FplqY7eJRJI+5VQNvjVHdcmj8RG2hjRLe6sFkjAGwcf9KMsfNIW2vKRB1K9nvZ2NxK8pUbFzmmbKxudT1BLW0heaZ/YRRk0zcu0l07Md2ORV36N7ySy1S8mhOHW22PxNXjjvNIilLWLZQ6hZz6bqU9ldoY7iBykinyFJcvIUUYGNz5Vf+kC4e99I99czY7SWTmbG3hVh6P8Ahb+0Et3f3U0VtptmuZ5ZDjNazzRU3r0ZZG1G2CGn6NqGqatHp1jayT3UhwsajJNHVx6K7fS7QJxDqS6Tdxx9pLG6GTsx05SBvknHhWx8N6twp6KODLjieWz7W+ue7bFwDJIOmFH7q+PzrE+O/SjqvG9/PK8FvDaOVIijjwx5emW6nB9a1eZYopY/wBmY7ZJuXwBOr2iQ6zcwQXjaiwOI7jozrjbI3xt4U/p2l3F5CEEUkY7UMXIIAXHn6U2s7Q3Dz2qC3ZjnCDp6etPNf38wKvcSYPTlOB+Vc3XZutn9SLcQS2zSI/Nyez8d8j4UmvVSNUhRcjI5j1OabV7i5uUWdnlkYgZY5J8KI+IfR/q2h2AvrgR9hgE4bJHxFaY2t00ROmuStsNe1TTrWe2srjENwhSReUEsD13I2+VI6W9nGGvJVjJGVjHVqltqVpYWQa2TmumXl5mG4OKF7l7i7cyO7SN47mtZZklWOTM9Nua5LVdWt7bmFtB3j1LHNVPp+1ebVeB4XuX5minCgDyryPTr2XHZ28rZ8lqP6QNF1KDg6eS4tmjRGDZPhtUYJ1NbSHqo/hGPGvK9r0V6Rzh4dDTD7OivTbTjWLT9DsdVgmsUfT37+lytOts3MxWZSPdJIGV6edYnL6O+M5NMW6ltHnhmR7gyQTrIz4XLFsHPuqT8K+l9L4o1uwtRFBqt1Gi+yqyHArlXV/TJxBxXqN5NJq1zb2x5o0hLkc6fuiRT3SPAqwIPh51m8SfRqs3hpBiWueFodW4N0e+0W4up7azZ7O8wY5C4JKh15SGXIKqfLxJxQ9F6NdXt7K44n1CM8P2UTskFrJJh5WH2YDMO6cbb+W1df8Ao+1S51/gfS9V1JBDJLAFukYBWkZSV58ee3QdfLwqF6d+A9Y4z0bT4dDnWMWzs7xscdqcbDPhWsP07I3p0i+1KCS50i6ijIDtEwGflWa6L6JdB1q6mudcte2vCctKp5T61gUPp09J9kHtp9Tt5eU8haa1Tn28zjNFOletnU57VIby3jhvAeZrmBsBvLlXGPnWGWE08tVzJcf4Lxx1WNJ/hvv/AEV6K/8AS3n/AFR/TXjepf0ZIpY6VdcoGSTcHYf5aj2HpK07ULa3S/VpJJFBYPGMfjU1ruDlfs4c8w26Yz41liWsr8ly0kuCpX1S+icqCNLuCD0/ujf01OsfVdwPeX0FrbaHO8sziNB9Mbqf+ajLhrUrIaVbw3kq9si4fmGMb7V5qnHWi8FcT6PqF6YhZ+1zrCuTjGNsVvLHK7iZxnFJpnrx+sX0bgEnT7rA/wDcN/TRH6p/V56JOKNPv7/X9Oaa1hmMcfaXBHh1JFTLj1oejg2jql8+SpGPZ3p70F+lf0fW2hPpOsT9kkMhdVk6MT41cYyU4mcpRcJJIf4u9WXoh0C2k1HRdKlv+XLdnHfEqo9TnaqL0ccB8LX0+o6Jqtt2M3MGUJNhgpyNielEd96T7DS+Mr1bO8XWNIfBWBSF5T5Z/lWVekPVr6Li3+1/DBv1WYATBUOIxjpyr1x5iu7Hik5fY5PJm5Yku7C3iX1NcM3GqW76S2o2dtg9qsVyG7T/h3ryq/1aeuvQ7SG40njlJI7yEhY5nUnmXwz5GvKv0c3wV6+NP3B6b4AteIbrU7pnuO0fJhQlVPzqC3oh4aJH2Vz0/+5arg9cC2q8n9kdQI8/aD6VRf7f8ATB/4S1D8R9Ky/r9Ff3+yyPql4Zb2luz/AOO3yoG4n9GNlZcS3lpbK0aQPyqu+23nVr/t/tT/APCWo/iv9KPr/wBLUPEWvz6mdFnhaZgxQuPDA8qHjl5aHJN9lSPRHfSuxtraXswTg8u23Wg/U9Pm03UJLeYFTGcVrLeuiVrZouFb1TjYlhn8qDvSgHh41uY2VgQFbBXHUZqfYrdc2Z1WtUZ+6jtjv7I6fGtZ9QXCnDnFvpb0+w4xDtpiq0jDn5QzAbA+ma0D0df7P7V/TDwfd6tBrcOml5ZLe3hnUmSUqcc+B9zPjRvoX+z81zU+HdO1S01m3jFzGJkB9oZ6Eis8c4TbbdNEZ5ZIxSS/KzD/WFwVpXB/pN4g0jQ5jPZ2l2yQb5PKdxv45BIoSkuDHlVjDMvj4V1BJ6lPU1pswXUuM7JJFbfNxg5rSOHfV/wCrfSOHL/XNM0iLW0063a5kZ5ecEIMkADbeolPFGTUbLgslJzPP9nz6NeI+NvV9d8V8IXEScRWs7xJZ3H7G4QAEb/dbqAenjXH3G3o14w4N1K4suKOHb+xlizkSRHkI8w3Q/Gu6fR1x6Nc0G2l020h0m3KZS1t1Cogz0AFSPS9x9qOlcKzXhgN3HCpIUrzZz0rpeBNqS6ZyR9RSnLHLtcUcKcMejfizieNn0Hhy/vI0UuzxxnlAAyd/Hao9zbXuhajJZ6hbS208Zw8MqFWHxBq+sPS7xXoetz6jw3q91p8szEskchCc3mB4GtH03/aQ6zPaDTfSfwHofFcHTtZIRFL8c4IzS9OI1myW1JWYob15UZ3/AGajOD1qg1zVzcsYFJOR7WDtWr8b+mbgDX9KvBw56ObbSbmZCqt7SBD5gViXYSvKWKt4k7eFZzi48WUtpK2O2kZ9pFYtg4P81Hu+OThK9RjkLG4/Kh6yt4bbTzPdAhidh41Z8QsTwbeNnGVbA/w1WNcP/AJvlGQ16K8r2vVOGyLt/wBy/wD72vT5+OvK8rQCj9Y/pd12z9HM9vDMgmiCRq/LuBv/AErkC0N1dzRqLiZGkYDKtjHzr2vK0fk1S1i2uxdR8lzNDHK8iI2AXJJOBuae/Suo/wCty/8AWa8ryvZ8CqOFfcz66+3tF9Rmt47iK6nkRjgnnOahm7nTOJ5P+qvK8r4ufCPf8sck1G9KMDcOf+o1bccXE03BVq0rsx5uUknqMGvK8rbF+SMZ9B76u9G0+bhe3uHt1MrKcsd/E1i3pE0+P+1F+8Yxy3B2ryvK0l2bR6K7S9Is5YV54z186n8OaJY3WoLDPEHTnxg/GvK8rTzEx8j19w9YQ65JaJEex58cpPlTnBml2tx6SNKtZEzDJKysvkR5V5XlZvhmUugm9OOmW3DPHw0/SowkM1mso5v3mB/pWS3Ou6tJpsqPfSlQPZr2vK9GH4p/w0S+kf8A6M+uvTl6T4vR+OC01+YaLzF+yx3iT5nxr2vK8rwt3/kNf+vaf//Z'">
+                </div>
+            </div>
+            
+            <!-- About Content -->
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6 sm:mb-8">
+                    About <span class="text-purple-600">Quirky Tech Solutions</span>
+                </h2>
+                
+                <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">
+                    <strong>Quirky Tech Solutions</strong> is an AI-driven IT agency focused on building impactful and engaging digital experiences. We are a team of passionate designers, developers, and researchers who work together to turn complex ideas into smart solutions that help businesses grow.
+                </p>
+                
+                <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">
+                    We believe great design goes beyond looks — it's about creating meaningful connections between businesses and their users. With a strong human-centered approach, we ensure every product we create is intuitive, accessible, and enjoyable to use.
+                </p>
+                
+                <div class="bg-purple-50 border-l-4 border-purple-500 p-4 sm:p-6 rounded-r-lg mb-6 sm:mb-8">
+                    <p class="text-gray-700 italic text-sm sm:text-base md:text-lg leading-relaxed">
+                        We are also grateful to collaborate with trusted partners like <strong class="text-purple-700">RADHAHARI Tech Services</strong>, a leading company supporting startups and local rural communities. Their vision and dedication inspire us to deliver technology that creates real value and positive change.
+                    </p>
+                </div>
+                
+                <!-- About Buttons -->
+                <!-- <div class="flex flex-col sm:flex-row gap-4 mt-8"> -->
+                    <!-- <a href="#contact" 
+                       class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors duration-300 shadow-md hover:shadow-lg text-sm sm:text-base">
+                        <span>Get In Touch</span>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a> -->
+                    
+                    <!-- <a href="#portfolio" 
+                       class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-purple-600 font-medium rounded-lg border border-purple-600 hover:bg-purple-50 transition-colors duration-300 shadow-sm hover:shadow text-sm sm:text-base">
+                        <span>View Our Portfolio</span>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                    </a> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Image hover effect */
+img {
+    transition: transform 0.5s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Ensure image doesn't break on very small screens */
+@media (max-width: 640px) {
+    .flex-col {
+        gap: 2rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+    
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Better readability on mobile */
+@media (max-width: 480px) {
+    .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+    
+    .px-6 {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+    
+    .py-3 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+}
+
+/* Smooth loading for image */
+img[src*="about-us.png"] {
+    min-height: 300px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Remove loading animation when image loads */
+img.loaded {
+    background: none;
+    animation: none;
+}
+
+</style>
+
+<script>
+// Add loaded class to image when it loads
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutImg = document.querySelector('img[src*="about-us.png"]');
+    if (aboutImg) {
+        aboutImg.addEventListener('load', function() {
+            this.classList.add('loaded');
+        });
+        
+        // If image is already cached, trigger load event
+        if (aboutImg.complete) {
+            aboutImg.classList.add('loaded');
+        }
+    }
+});
+</script>
+
+    <section id="ourclients" class="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
+                Our <span class="text-purple-600">Clients</span>
+            </h2>
+        <p class="text-center text-gray-600 mb-8 sm:mb-10 md:mb-12 lg:mb-16 max-w-2xl md:max-w-3xl mx-auto px-4 text-xs sm:text-sm md:text-base lg:text-lg">
+            We're proud to partner with industry leaders and innovative brands across various sectors.
+        </p>
+        
+        <!-- Client Logos Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8 px-2 sm:px-4">
+            
+            <!-- Client 1 - Cleaning Crew -->
+            <a href="https://thecleaningcrew.in/" target="_blank" rel="noopener noreferrer"
+               class="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                    <img src="static/media/clients/cleaning-crew-client.png" 
+                         alt="The Cleaning Crew Logo" 
+                         class="max-w-full max-h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <!-- Fallback text if image fails to load -->
+                    <div style="display: none;" class="text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-purple-600">TCC</div>
+                        <div class="text-xs sm:text-sm text-gray-500 mt-1">Cleaning Crew</div>
+                    </div>
+                </div>
+                <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 text-center">The Cleaning Crew</h3>
+                <p class="text-gray-500 text-xs sm:text-sm text-center mt-1 sm:mt-2">Cleaning Services</p>
+            </a>
+            
+            <!-- Client 2 - Zahhra Arts -->
+            <a href="https://zahhraarts.in/" target="_blank" rel="noopener noreferrer"
+               class="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                    <img src="static/media/clients/Zahhra-Arts.png" 
+                         alt="Zahhra Arts Logo" 
+                         class="max-w-full max-h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <!-- Fallback text if image fails to load -->
+                    <div style="display: none;" class="text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-blue-600">ZA</div>
+                        <div class="text-xs sm:text-sm text-gray-500 mt-1">Zahhra Arts</div>
+                    </div>
+                </div>
+                <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 text-center">Zahhra Arts</h3>
+                <p class="text-gray-500 text-xs sm:text-sm text-center mt-1 sm:mt-2">Art & Design</p>
+            </a>
+            
+            <!-- Client 3 - Aashman Foundation -->
+            <a href="https://aashmanfoundation.org/" target="_blank" rel="noopener noreferrer"
+               class="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                    <img src="static/media/clients/aashman-foundation.jpg" 
+                         alt="Aashman Foundation Logo" 
+                         class="max-w-full max-h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <!-- Fallback text if image fails to load -->
+                    <div style="display: none;" class="text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-green-600">AF</div>
+                        <div class="text-xs sm:text-sm text-gray-500 mt-1">Aashman Foundation</div>
+                    </div>
+                </div>
+                <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 text-center">Aashman Foundation</h3>
+                <p class="text-gray-500 text-xs sm:text-sm text-center mt-1 sm:mt-2">NGO/Social Work</p>
+            </a>
+            
+            <!-- Client 4 - Drone Institute of India -->
+            <a href="https://droneinstituteofindia.com/" target="_blank" rel="noopener noreferrer"
+               class="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                    <img src="static/media/clients/drone-institution.webp" 
+                         alt="Drone Institute Logo" 
+                         class="max-w-full max-h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <!-- Fallback text if image fails to load -->
+                    <div style="display: none;" class="text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-red-600">DII</div>
+                        <div class="text-xs sm:text-sm text-gray-500 mt-1">Drone Institute</div>
+                    </div>
+                </div>
+                <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 text-center">Drone Institute</h3>
+                <p class="text-gray-500 text-xs sm:text-sm text-center mt-1 sm:mt-2">Drone Training</p>
+            </a>
+            
+            <!-- Client 5 - Win Advisors -->
+            <a href="https://winadvisors.co.in/" target="_blank" rel="noopener noreferrer"
+               class="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                    <img src="static/media/clients/Win-advisor.png" 
+                         alt="Win Advisors Logo" 
+                         class="max-w-full max-h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <!-- Fallback text if image fails to load -->
+                    <div style="display: none;" class="text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-yellow-600">WA</div>
+                        <div class="text-xs sm:text-sm text-gray-500 mt-1">Win Advisors</div>
+                    </div>
+                </div>
+                <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 text-center">Win Advisors</h3>
+                <p class="text-gray-500 text-xs sm:text-sm text-center mt-1 sm:mt-2">Financial Services</p>
+            </a>
+            
+            <!-- Client 6 - Manish Ved Estate -->
+            <a href="https://www.manishved.in/" target="_blank" rel="noopener noreferrer"
+               class="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                    <img src="static/media/clients/manish-ved-estate.webp" 
+                         alt="Manish Ved Estate Logo" 
+                         class="max-w-full max-h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <!-- Fallback text if image fails to load -->
+                    <div style="display: none;" class="text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-indigo-600">MVE</div>
+                        <div class="text-xs sm:text-sm text-gray-500 mt-1">Manish Ved Estate</div>
+                    </div>
+                </div>
+                <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 text-center">Manish Ved Estate</h3>
+                <p class="text-gray-500 text-xs sm:text-sm text-center mt-1 sm:mt-2">Real Estate</p>
+            </a>
+            
+            <!-- Client 7 - Gadiya Group -->
+            <a href="https://gadiyagroup.com/" target="_blank" rel="noopener noreferrer"
+               class="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                    <img src="static/media/clients/gadiya-group.png" 
+                         alt="Gadiya Group Logo" 
+                         class="max-w-full max-h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <!-- Fallback text if image fails to load -->
+                    <div style="display: none;" class="text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-pink-600">GG</div>
+                        <div class="text-xs sm:text-sm text-gray-500 mt-1">Gadiya Group</div>
+                    </div>
+                </div>
+                <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 text-center">Gadiya Group</h3>
+                <p class="text-gray-500 text-xs sm:text-sm text-center mt-1 sm:mt-2">Industrial Group</p>
+            </a>
+            
+            <!-- Client 8 - Maxfit Pipes -->
+            <a href="https://maxfitpipe.com/" target="_blank" rel="noopener noreferrer"
+               class="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                    <img src="static/media/clients/maxfitpipes.webp" 
+                         alt="Maxfit Pipes Logo" 
+                         class="max-w-full max-h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <!-- Fallback text if image fails to load -->
+                    <div style="display: none;" class="text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-teal-600">MP</div>
+                        <div class="text-xs sm:text-sm text-gray-500 mt-1">Maxfit Pipes</div>
+                    </div>
+                </div>
+                <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 text-center">Maxfit Pipes</h3>
+                <p class="text-gray-500 text-xs sm:text-sm text-center mt-1 sm:mt-2">Pipes Manufacturing</p>
+            </a>
+            
+            <!-- Client 9 - Marvel Technologies -->
+            <a href="https://marveltechnologies.net/" target="_blank" rel="noopener noreferrer"
+               class="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                    <img src="static/media/clients/marvel-technologies.jpeg" 
+                         alt="Marvel Technologies Logo" 
+                         class="max-w-full max-h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <!-- Fallback text if image fails to load -->
+                    <div style="display: none;" class="text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-orange-600">MT</div>
+                        <div class="text-xs sm:text-sm text-gray-500 mt-1">Marvel Technologies</div>
+                    </div>
+                </div>
+                <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 text-center">Marvel Technologies</h3>
+                <p class="text-gray-500 text-xs sm:text-sm text-center mt-1 sm:mt-2">Technology Solutions</p>
+            </a>
+            
+            <!-- Client 10 - Elite Traders -->
+            <a href="https://elite-traders.co.in/" target="_blank" rel="noopener noreferrer"
+               class="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                    <img src="static/media/clients/elite-trader.png" 
+                         alt="Elite Traders Logo" 
+                         class="max-w-full max-h-full object-contain"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <!-- Fallback text if image fails to load -->
+                    <div style="display: none;" class="text-center">
+                        <div class="text-xl sm:text-2xl font-bold text-cyan-600">ET</div>
+                        <div class="text-xs sm:text-sm text-gray-500 mt-1">Elite Traders</div>
+                    </div>
+                </div>
+                <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 text-center">Elite Traders</h3>
+                <p class="text-gray-500 text-xs sm:text-sm text-center mt-1 sm:mt-2">Trading & Investments</p>
+            </a>
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="mt-10 sm:mt-12 md:mt-14 lg:mt-16 text-center px-4">
+            <p class="text-gray-700 mb-5 sm:mb-6 text-sm sm:text-base md:text-lg">
+                Want to join our list of successful partners?
+            </p>
+            <a href="https://wa.me/917276168939?text=Hello%20Quirky%20Tech%20Solutions,%20I%20would%20like%20to%20discuss%20becoming%20a%20client" 
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center px-5 sm:px-6 md:px-7 lg:px-8 py-2.5 sm:py-3 md:py-3.5 lg:py-4 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="currentColor" viewBox="0 0 448 512">
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6z"/>
+                </svg>
+                <span class="text-xs sm:text-sm md:text-base lg:text-lg">Become a Client</span>
+            </a>
+            <p class="text-gray-500 text-xs sm:text-sm mt-3 sm:mt-4">
+                Or <a href="tel:+917276168939" class="text-purple-600 hover:text-purple-800 font-medium">call us at +91 7276168939</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Enhanced hover effects for mobile touch devices */
+@media (hover: none) {
+    .bg-white {
+        transition: transform 0.2s ease;
+    }
+    
+    .bg-white:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Improve image loading experience */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Better spacing for very small screens */
+@media (max-width: 360px) {
+    .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .px-4 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .p-4 {
+        padding: 0.75rem;
+    }
+    
+    .w-16 {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    
+    h3 {
+        font-size: 0.75rem;
+    }
+    
+    p.text-xs {
+        font-size: 0.65rem;
+    }
+}
+</style>
+
+    <footer class="relative w-full bg-[#0b0b0f] text-white py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 overflow-hidden">
+    <!-- Gradient overlay -->
+    <!-- <div class="absolute top-0 left-0 w-full h-32 sm:h-40 md:h-48 bg-gradient-to-b from-purple-500/20 to-transparent pointer-events-none"></div> -->
+    
+    <!-- Main content container -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 lg:gap-16 relative z-10">
+        
+        <!-- Company Info -->
+        <div class="text-center xs:text-left">
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4 text-purple-400">Quirky Tech Solutions</h3>
+            <p class="text-gray-300 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base">
+                Creating exceptional digital experiences. We transform ideas into beautiful, functional designs that drive results.
+            </p>
+            <p class="text-gray-400 text-xs sm:text-sm font-medium">
+                Trusted by <span class="text-purple-400 font-semibold">50+</span> clients
+            </p>
+        </div>
+        
+        <!-- Working Hours/Service Hours -->
+        <div class="text-center xs:text-left">
+            <h4 class="text-lg sm:text-xl lg:text-2xl font-semibold mb-3 sm:mb-4 text-purple-400">Working Hours</h4>
+            <div class="space-y-2 text-gray-300 text-xs sm:text-sm lg:text-base">
+                <p class="font-medium">Monday - Saturday</p>
+                <p class="text-purple-300">9:00 AM - 6:00 PM</p>
+                <p class="font-medium mt-2">Sunday</p>
+                <p class="text-purple-300">Emergency Support Only</p>
+            </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="text-center xs:text-left">
+            <h4 class="text-lg sm:text-xl lg:text-2xl font-semibold mb-3 sm:mb-4 text-purple-400">Quick Links</h4>
+            <ul class="space-y-1 sm:space-y-2 text-gray-300 text-xs sm:text-sm lg:text-base">
+                <li><a href="#services" class="hover:text-purple-400 transition duration-300 inline-block hover:translate-x-1">Services</a></li>
+                <li><a href="#portfolio" class="hover:text-purple-400 transition duration-300 inline-block hover:translate-x-1">Portfolio</a></li>
+                <li><a href="#clients" class="hover:text-purple-400 transition duration-300 inline-block hover:translate-x-1">Clients</a></li>
+                <li><a href="#about" class="hover:text-purple-400 transition duration-300 inline-block hover:translate-x-1">About</a></li>
+                <li><a href="#ourclients" class="hover:text-purple-400 transition duration-300 inline-block hover:translate-x-1">Our Work</a></li>
+            </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="text-center xs:text-left">
+            <h4 class="text-lg sm:text-xl lg:text-2xl font-semibold mb-3 sm:mb-4 text-purple-400">Get in Touch</h4>
+            <div class="space-y-2 sm:space-y-3 text-gray-300 text-xs sm:text-sm lg:text-base">
+                <p class="break-words">📍 Upper Govind Nagar, Raheja Tower, Malad East Mumbai, 400097.</p>
+                <p><a href="tel:+917276168939" class="hover:text-purple-400">+91 7276168939</a></p>
+                <p><a href="tel:+918830583568" class="hover:text-purple-400">+91 8830583568</a></p>
+                <p><a href="mailto:atrcpit2pk@gmail.com" class="hover:text-purple-400 break-all">atrcpit2pk@gmail.com</a></p>
+            </div>
+            
+            <!-- Social Icons -->
+            <div class="flex justify-center xs:justify-start gap-3 sm:gap-4 mt-4 sm:mt-6">
+                <a href="#" class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-purple-500 transition" aria-label="Facebook">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="text-white text-sm sm:text-base md:text-lg" height="1em" width="1em">
+                        <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-purple-500 transition" aria-label="Instagram">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-white text-sm sm:text-base md:text-lg" height="1em" width="1em">
+                        <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-purple-500 transition" aria-label="LinkedIn">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-white text-sm sm:text-base md:text-lg" height="1em" width="1em">
+                        <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-purple-500 transition" aria-label="Twitter">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white text-sm sm:text-base md:text-lg" height="1em" width="1em">
+                        <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                    </svg>
+                </a>
+                <!-- Email Icon with mailto functionality -->
+                <a href="mailto:atrcpit2pk@gmail.com?subject=Contact%20from%20Website&body=Hello%20Quirky%20Tech%20Solutions,%0A%0AI%20would%20like%20to%20get%20in%20touch%20with%20you%20regarding..." 
+                   class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-purple-500 transition" 
+                   aria-label="Email Us">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white text-sm sm:text-base md:text-lg" height="1em" width="1em">
+                        <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Copyright -->
+    <div class="mt-8 sm:mt-10 md:mt-12 lg:mt-14 border-t border-white/10 pt-6 sm:pt-8 text-center text-gray-400 text-xs sm:text-sm">
+        © 2025 <span class="text-purple-400 font-medium">quirky.in</span> All Rights Reserved. 
+        Powered by <span class="text-purple-400 font-medium">Quirky Tech Solutions</span>
+    </div>
+    
+    <!-- Decorative element -->
+    <div class="absolute bottom-0 right-0 w-40 sm:w-48 md:w-56 lg:w-64 h-40 sm:h-48 md:h-56 lg:h-64 bg-purple-400/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+</footer>
+
+<!-- Sticky WhatsApp and Call Icons (floating on left side) -->
+<div class="fixed left-4 md:left-6 bottom-4 md:bottom-6 z-50 flex flex-col gap-3">
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/917276168939?text=Hello%20Quirky%20Tech%20Solutions,%20I%20would%20like%20to%20get%20more%20information" 
+       target="_blank"
+       class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-green-600 hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110" 
+       aria-label="Chat on WhatsApp"
+       title="Chat on WhatsApp">
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-white text-xl md:text-2xl" height="1em" width="1em">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+        </svg>
+    </a>
+    
+    <!-- Call Icon -->
+    <a href="tel:+917276168939" 
+       class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110" 
+       aria-label="Call Now"
+       title="Call Now">
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white text-xl md:text-2xl" height="1em" width="1em">
+            <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path>
+        </svg>
+    </a>
+</div>
+
+<!-- Optional: Add a little JavaScript for smooth appearance -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Optional: Add a small delay for the icons to appear for better UX
+    setTimeout(() => {
+        const stickyIcons = document.querySelector('.fixed.left-4');
+        if (stickyIcons) {
+            stickyIcons.classList.add('opacity-100');
+        }
+    }, 300);
+});
+</script>
+
+<style>
+/* Smooth transition for sticky icons */
+.fixed.left-4 {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fixed.left-4.opacity-100 {
+    opacity: 1;
+}
+
+/* Animation for icons on hover */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.w-12.h-12:hover, .w-14.h-14:hover {
+    animation: pulse 0.3s ease-in-out;
+}
+
+/* Mobile responsiveness adjustments */
+@media (max-width: 640px) {
+    .fixed.left-4 {
+        left: 3px;
+        bottom: 3px;
+    }
+    
+    .w-12.h-12 {
+        width: 45px;
+        height: 45px;
+    }
+}
+</style>
+
+<script>
+// WhatsApp API Function
+function openWhatsApp() {
+    const phoneNumber = "917276168939";
+    const message = "Hello QUIRKY TECH SOLUTIONS! I visited your website and would like to know more about your services.";
+    
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    
+    // Optional: Send data to your backend for analytics
+    sendWhatsAppAnalytics();
+}
+
+// Optional analytics function
+function sendWhatsAppAnalytics() {
+    // You can send analytics data to your backend
+    // Example using fetch API
+    const analyticsData = {
+        event: 'whatsapp_click',
+        timestamp: new Date().toISOString(),
+        url: window.location.href,
+        userAgent: navigator.userAgent
+    };
+    
+    // Uncomment and configure when you have a backend endpoint
+    /*
+    fetch('/api/analytics/whatsapp', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(analyticsData)
+    }).catch(error => console.log('Analytics error:', error));
+    */
+}
+
+// Enhanced Email Functionality
+function handleEmailClick() {
+    // Optional: Add click tracking or analytics
+    const emailData = {
+        event: 'email_click',
+        email: 'atrcpit2pk@gmail.com',
+        timestamp: new Date().toISOString(),
+        url: window.location.href
+    };
+    
+    // Send analytics data (optional)
+    // fetch('/api/analytics/email', {...});
+    
+    return true; // Allow default mailto behavior
+}
+
+// Add click listeners for email links
+document.addEventListener('DOMContentLoaded', function() {
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    emailLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.href.includes('atrcpit2pk@gmail.com')) {
+                handleEmailClick();
+            }
+        });
+    });
+});
+</script>
+</body>
+
+        
+
